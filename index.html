@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do list | My tasks</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="app">
+        <header class="header">
+            <div class="logo">TASK<span>FLOW</span></div>
+            <p class="header-note">Твій простір для планів і справ</p>
+        </header>
+
+        <section class="intro">
+            <p class="eyebrow">ПЛАНУЙ ПРОСТІШЕ</p>
+            <h1>Список справ</h1>
+            <p class="subtitle">Додавай завдання, відмічай виконані та рухайся вперед.</p>
+        </section>
+
+        <section class="task-panel">
+            <form id="task-form" class="task-form">
+                <label class="visually-hidden" for="task-input">Нове завдання</label>
+                <input
+                    id="task-input"
+                    type="text"
+                    placeholder="Напиши, що потрібно зробити..."
+                    maxlength="120"
+                    autocomplete="off"
+                    required
+                >
+                <button id="add-button" type="submit">Додати завдання <span>＋</span></button>
+            </form>
+
+            <div class="toolbar">
+                <div>
+                    <h2>Мої завдання</h2>
+                    <p id="task-count" class="task-count">Завантаження списку...</p>
+                </div>
+                <button id="refresh-button" class="refresh-button" type="button" aria-label="Оновити список">
+                    ↻ Оновити
+                </button>
+            </div>
+
+            <p id="status-message" class="status-message" role="status" aria-live="polite"></p>
+            <ul id="task-list" class="task-list"></ul>
+            <div id="empty-state" class="empty-state" hidden>
+                <div class="empty-icon">✓</div>
+                <h3>Поки що тут порожньо</h3>
+                <p>Додай перше завдання у поле вище.</p>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <span>Збереження через REST API</span>
+            <span class="server-status"><i></i> MockAPI</span>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
